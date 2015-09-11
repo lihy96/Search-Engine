@@ -1,0 +1,31 @@
+
+<HTML>
+    <head>
+        <title>Food Search Engine</title>
+    </head>
+    <body>
+        <h1 align="center">Welcome To Food Search Engine</h1>
+        <hr/>
+        <p>
+            <form method="GET" action="/search/">
+                Food You Want To Search:
+            <input type="text" name="food"/>
+            <input type="submit" value="Search"/>
+            </form>
+        </p>
+        <br/>
+            <table border="1">
+              <tr><th> Food </th><th>ID</th></tr>
+             {% for user in list %}
+              <tr>
+              <td><p align="center">{{ user.name }}</p></td>
+              <td><p align="center"><a href="/user/?id={{ user.ID }}">{{ user.ID }}</a></p></td>
+              </tr>
+            {% endfor %}
+            </table>
+        <br/>
+        <hr/>
+        <h3 align="center"><a href="/">Return Home</a></h3>
+
+    </body>
+</HTML>
